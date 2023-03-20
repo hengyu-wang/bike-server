@@ -1,0 +1,28 @@
+create table bike(
+	bikeid varchar(40) primary key,
+	longitude varchar(40),
+	latitude varchar(40),
+	RFID varchar(40),
+	statu varchar(40),
+	speed varchar(40),
+	lastTime varchar(40),
+	voltage varchar(40),
+	temperature varchar(40)
+
+)
+
+create table subscriber(
+	userid varchar(40) primary key,
+	username varchar(40)
+)
+
+
+
+                      
+create table record(
+  bikeid varchar(40),
+  userid varchar(40),
+  primary key(bikeid,userid),
+  foreign key(bikeid) references bike(bikeid),
+  foreign key(userid) references subscriber(userid)
+)
